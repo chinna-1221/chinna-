@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBP Elite Studio | Photography & Films</title>
+<style>
+:root{--bg:#0b0b0d;--panel:#151519;--gold:#d9b56d;--muted:#b9b7b2;--white:#f7f4ee}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,"Noto Sans Telugu",sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#0b0b0deF;border-bottom:1px solid #2a2926;backdrop-filter:blur(10px)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:20px}.brand{font-weight:800;letter-spacing:1.5px}.brand span{color:var(--gold)}nav .links{display:flex;gap:18px;font-size:14px;color:var(--muted)}.btn{display:inline-block;background:var(--gold);color:#17130b;border:0;padding:12px 18px;border-radius:4px;font-weight:800;cursor:pointer}
+.hero{padding:90px 0 80px;background:linear-gradient(90deg,#0b0b0df7 0%,#0b0b0dc9 54%,#0b0b0d70),radial-gradient(ellipse at 78% 25%,#69502b 0%,#24201b 28%,#0b0b0d 68%);min-height:430px;display:flex;align-items:center}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800}.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.05;margin:15px 0}.hero p{color:var(--muted);max-width:600px;font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn.outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+section{padding:64px 0}.section-head{margin-bottom:28px}.section-head h2{font-size:clamp(28px,4vw,40px);margin:5px 0}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid #2a2926;border-radius:8px;overflow:hidden}.visual{height:150px;background:linear-gradient(135deg,#302b25,#7b6038 50%,#171719);display:flex;align-items:end;padding:16px;color:#fff;font-size:25px;font-weight:800}.cardbody{padding:18px}.card h3{margin:0 0 7px}.card p{color:var(--muted);font-size:14px;min-height:42px}.price{color:var(--gold);font-size:22px;font-weight:800}.small{color:#a8a49b;font-size:12px}
+.booking{background:#111114;border-top:1px solid #252428;border-bottom:1px solid #252428}.booking-layout{display:grid;grid-template-columns: .8fr 1.2fr;gap:30px;align-items:start}.booking-note{color:var(--muted)}form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--panel);padding:22px;border:1px solid #302e29;border-radius:8px}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}input,select,textarea{width:100%;padding:12px;border-radius:4px;border:1px solid #38363a;background:#0e0e11;color:var(--white);font:inherit}textarea{min-height:84px;resize:vertical}.full{grid-column:1/-1}.notice{font-size:12px;color:#c7c0b3;margin:0}.result{display:none;margin-top:16px;padding:16px;border:1px solid var(--gold);border-radius:6px;background:#1c1913}.result h3{margin-top:0;color:var(--gold)}.result pre{white-space:pre-wrap;font-family:inherit;color:var(--white)}footer{padding:28px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:760px){nav .links{display:none}.grid{grid-template-columns:1fr}.booking-layout{grid-template-columns:1fr}.hero{padding:65px 0}form{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="#"><span>MBP</span> ELITE STUDIO</a>
+<div class="links"><a href="#events">Events</a><a href="#packages">Packages</a><a href="#booking">Book Now</a></div>
+<a class="btn" href="#booking">Book Your Shoot</a>
+</nav></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Photography • Cinematic Films • Memories</div>
+<h1>Your Moments.<br><span style="color:var(--gold)">Our Frame.</span></h1>
+<p>Every celebration has a story. Let MBP Elite Studio capture your wedding, family celebrations and special moments with care.</p>
+<div class="actions"><a class="btn" href="#booking">Book Your Dream Shoot Today</a><a class="btn outline" href="#events">Explore Events</a></div>
+</div></section>
+<section id="events"><div class="wrap">
+<div class="section-head"><div class="eyebrow">What we capture</div><h2>Choose Your Event</h2><p>Choose an event below to start your booking request.</p></div>
+<div class="grid" id="eventCards"></div>
+</div></section>
+<section id="packages"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Clear and simple</div><h2>Photography Packages</h2><p>These are sample prices for the demo. Replace them with your studio's actual rates before publishing.</p></div>
+<div class="grid" id="packageCards"></div>
+</div></section>
+<section class="booking" id="booking"><div class="wrap booking-layout">
+<div><div class="eyebrow">Let's plan your day</div><h2>Booking Enquiry</h2><p class="booking-note">Fill in your event details. This demo will validate the form and create a preview of the booking request on this page.</p><p class="small">Demo only: details are not sent or saved to a server, and no real payment is collected.</p></div>
+<div><form id="bookingForm">
+<div><label for="name">Customer name *</label><input id="name" required placeholder="Your full name"></div>
+<div><label for="phone">Mobile number *</label><input id="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number"></div>
+<div><label for="event">Event type *</label><select id="event" required><option value="">Choose event</option></select></div>
+<div><label for="date">Event date *</label><input id="date" type="date" required></div>
+<div><label for="package">Package *</label><select id="package" required><option value="">Choose package</option></select></div>
+<div><label for="advance">Advance amount (₹)</label><input id="advance" type="number" min="0" placeholder="Confirm with studio"></div>
+<div class="full"><label for="address">Venue / address *</label><textarea id="address" required placeholder="Event venue and area"></textarea></div>
+<div class="full"><label for="message">Extra requirements</label><textarea id="message" placeholder="Photo, video, album, timings, etc."></textarea></div>
+<div class="full"><button class="btn" type="submit">Preview Booking Request</button></div>
+<p class="notice full">Submitting this demo form does not confirm a booking. Confirm date availability and payment manually until a backend and payment gateway are connected.</p>
+</form>
+<div class="result" id="result" aria-live="polite"><h3>Booking Request Preview</h3><pre id="summary"></pre><button class="btn outline" type="button" id="copyBtn">Copy Details</button></div>
+</div></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>MBP ELITE STUDIO</strong><br>Capture Moment Create Memories</div><div>Book your dream shoot today<br><span class="small">Add your studio phone, location and social links before launch.</span></div></div></footer>
+<script>
+const events=[
+ {name:"Wedding Photography",icon:"💍",desc:"Wedding day photography and cinematic film."},
+ {name:"Half Saree Ceremony",icon:"✨",desc:"Traditional portraits and family memories."},
+ {name:"Baby Shower",icon:"🌸",desc:"Beautiful maternity and celebration coverage."},
+ {name:"Birthday Shoot",icon:"🎂",desc:"Birthday portraits, candid moments and video."},
+ {name:"Engagement",icon:"💑",desc:"Couple portraits and engagement coverage."},
+ {name:"Housewarming",icon:"🏠",desc:"Capture the joy of your new home."},
+ {name:"Pre-Wedding Shoot",icon:"📸",desc:"Creative couple portraits and cinematic clips."},
+ {name:"Cinematic Wedding Films",icon:"🎬",desc:"Story-led films and highlight videos."},
+ {name:"Other Event",icon:"🎉",desc:"Tell us about your special occasion."}
+];
+const packages=[
+ {name:"Essential",price:"₹5,000",desc:"A simple coverage option for smaller celebrations."},
+ {name:"Classic",price:"₹12,000",desc:"Photography with expanded event coverage."},
+ {name:"Premium",price:"₹25,000",desc:"A premium photo and cinematic coverage option."}
+];
+const eventCards=document.getElementById("eventCards"),packageCards=document.getElementById("packageCards");
+events.forEach((e,i)=>{eventCards.insertAdjacentHTML("beforeend",`<article class="card"><div class="visual">${e.icon} ${e.name}</div><div class="cardbody"><h3>${e.name}</h3><p>${e.desc}</p><button class="btn chooseEvent" data-event="${e.name}">Select Event</button></div></article>`);document.getElementById("event").insertAdjacentHTML("beforeend",`<option>${e.name}</option>`)});
+packages.forEach(p=>{packageCards.insertAdjacentHTML("beforeend",`<article class="card"><div class="cardbody"><h3>${p.name}</h3><div class="price">${p.price}</div><p>${p.desc}</p><div class="small">Sample price — edit before launch</div></div></article>`);document.getElementById("package").insertAdjacentHTML("beforeend",`<option value="${p.name}">${p.name} — ${p.price} (sample)</option>`)});
+document.querySelectorAll(".chooseEvent").forEach(b=>b.addEventListener("click",()=>{document.getElementById("event").value=b.dataset.event;document.getElementById("booking").scrollIntoView({behavior:"smooth"});}));
+const dateInput=document.getElementById("date");const now=new Date();dateInput.min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById("bookingForm").addEventListener("submit",e=>{e.preventDefault();const data={name:document.getElementById("name").value.trim(),phone:document.getElementById("phone").value.trim(),event:document.getElementById("event").value,date:dateInput.value,package:document.getElementById("package").value,advance:document.getElementById("advance").value||"Not specified",address:document.getElementById("address").value.trim(),requirements:document.getElementById("message").value.trim()};const summary=`MBP ELITE STUDIO — BOOKING ENQUIRY\n\nName: ${data.name}\nMobile: ${data.phone}\nEvent: ${data.event}\nDate: ${data.date}\nPackage: ${data.package}\nProposed advance: ₹${data.advance}\nVenue/address: ${data.address}\nExtra requirements: ${data.requirements||"None"}\n\nSTATUS: Enquiry preview only — NOT a confirmed booking or payment receipt.`;document.getElementById("summary").textContent=summary;document.getElementById("result").style.display="block";});
+document.getElementById("copyBtn").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(document.getElementById("summary").textContent);document.getElementById("copyBtn").textContent="Copied!";}catch{document.getElementById("copyBtn").textContent="Select and copy the text";}});
+</script>
+</body></html>
